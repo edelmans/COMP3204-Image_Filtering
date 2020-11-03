@@ -35,7 +35,7 @@ public class MyHybridImages {
         //Using given formula for size given in the specification
         int size = (int) (8.0f * lowSigma + 1.0f); // (this implies the window is +/- 4 sigmas from the centre of the Gaussian)
         if (size % 2 == 0) size++; // size must be odd
-        System.out.println("Kernel size: " + size);
+        //System.out.println("Kernel size: " + size);
 
         //getting the 2D array needed for myConvolution using createKernelImage and pixels as suggested in the specification
         FImage gaussianKernel = Gaussian2D.createKernelImage(size, lowSigma);
@@ -43,7 +43,7 @@ public class MyHybridImages {
 
         MyConvolution myConv = new MyConvolution(kernelArray);
         lowImage = lowImage.process(myConv);
-        DisplayUtilities.display(lowImage, "Low image convoluted");
+        //DisplayUtilities.display(lowImage, "Low image convoluted");
 
         // -- High Pass Filtering --
         // "Can be most easily achieved by subtracting a low-pass version of an image itself"

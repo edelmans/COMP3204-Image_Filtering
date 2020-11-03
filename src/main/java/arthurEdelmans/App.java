@@ -29,22 +29,35 @@ public class App {
         //public static MBFImage makeHybrid(MBFImage lowImage, float lowSigma, MBFImage highImage, float highSigma)
         MBFImage highImage = ImageUtilities.readMBF(new File("images/data/cat.bmp"));
         MBFImage lowImage = ImageUtilities.readMBF(new File("images/data/dog.bmp"));
-        //Suggested
-        int lowSigma = 5;
+        //Based off the lecture recordings
+        int lowSigma = 7;
 
         MBFImage newHybridImage = MyHybridImages.makeHybrid(lowImage, lowSigma, highImage, 0f);
-        ArrayList<MBFImage> images = new ArrayList<>();
-        //images.add(newHybridImage);
-
-        MBFImage smallerHI1 = newHybridImage.clone();
-        ResizeProcessor resizer = new ResizeProcessor(.5f);
-        for (int i = 0; i < 3; i++){
-            smallerHI1 = resizer.halfSize(smallerHI1);
-            images.add(smallerHI1);
-        }
 
 
-        DisplayUtilities.display( "Hybrid", images);
+        //ResizeProcessor instantiation
+        ResizeProcessor resizer = new ResizeProcessor(5f);
+        int width = newHybridImage.getWidth();
+
+        MBFImage canvas = new MBFImage(width + width/2 + width/4 + width/8 + 80 , newHybridImage.getHeight());
+        canvas.fill(RGBColour.WHITE);
+
+        canvas.drawImage(newHybridImage, 0, 0);
+
+        MBFImage smallerHybrid = resizer.halfSize(newHybridImage);
+        canvas.drawImage(smallerHybrid, newHybridImage.getWidth() + 20, 0);
+        width+= smallerHybrid.getWidth() + 20;
+
+        smallerHybrid = resizer.halfSize(smallerHybrid);
+        canvas.drawImage(smallerHybrid, width + 20, 0);
+        width += smallerHybrid.getWidth() + 20;
+
+        smallerHybrid = resizer.halfSize(smallerHybrid);
+        canvas.drawImage(smallerHybrid, width + 20, 0);
+        width += smallerHybrid.getWidth() + 20;
+
+        DisplayUtilities.display(canvas);
+
 
 //        try {
 //            MBFImage image = ImageUtilities.readMBF(new File("images/data/cat.bmp"));
