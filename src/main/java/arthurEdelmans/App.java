@@ -29,7 +29,7 @@ public class App {
         //public static MBFImage makeHybrid(MBFImage lowImage, float lowSigma, MBFImage highImage, float highSigma)
         MBFImage highImage = ImageUtilities.readMBF(new File("images/Turtles.jpg"));
         MBFImage lowImage = ImageUtilities.readMBF(new File("images/Jaws.jpg"));
-        //Based off the lecture recordings
+
         int lowSigma = 4;
 
         MBFImage newHybridImage = MyHybridImages.makeHybrid(lowImage, lowSigma, highImage, 0f);

@@ -2,8 +2,13 @@ package arthurEdelmans;
 
 import org.openimaj.image.DisplayUtilities;
 import org.openimaj.image.FImage;
+import org.openimaj.image.ImageUtilities;
 import org.openimaj.image.MBFImage;
 import org.openimaj.image.processing.convolution.Gaussian2D;
+
+import javax.imageio.ImageIO;
+import java.io.File;
+import java.io.IOException;
 
 public class MyHybridImages {
     /**
@@ -48,6 +53,21 @@ public class MyHybridImages {
         // -- High Pass Filtering --
         // "Can be most easily achieved by subtracting a low-pass version of an image itself"
         highImage = highImage.subtract(highImage.process(myConv));
+
+        //save created images
+//        File lowImgFile = new File("images/output/lowPassImage.jpg");
+//        try {
+//            ImageIO.write(ImageUtilities.createBufferedImageForDisplay(lowImage), "jpg", lowImgFile);
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//
+//        File highImgFile = new File("images/output/highPassImage.jpg");
+//        try {
+//            ImageIO.write(ImageUtilities.createBufferedImageForDisplay(highImage), "jpg", highImgFile);
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
 
         //DisplayUtilities.display(highImage, "High image after subtraction");
 

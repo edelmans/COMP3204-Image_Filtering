@@ -38,7 +38,7 @@ public class MyConvolution implements SinglebandImageProcessor<Float, FImage> {
         int htc =(int) Math.floor(tCol/2);
         int htr =(int) Math.floor(tRow/2);
 
-        //utilising zero padding by padding the image by half the width and heigh of kernel
+        //utilising zero padding by padding the image by half the width and height of kernel, this way the convolution can reach the edges of the image
         clone = clone.padding(htr, htc, 0.0f);
 
         //convolve
@@ -60,7 +60,7 @@ public class MyConvolution implements SinglebandImageProcessor<Float, FImage> {
             }
         }
 
-        //remove padding before assigning clone onto image
+        //remove previously added padding before assigning clone onto image
         clone = clone.padding(-htr, -htc);
         image.internalAssign(clone);
 
