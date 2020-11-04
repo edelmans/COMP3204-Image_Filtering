@@ -49,7 +49,7 @@ public class MyHybridImages {
         // "Can be most easily achieved by subtracting a low-pass version of an image itself"
         highImage = highImage.subtract(highImage.process(myConv));
 
-        DisplayUtilities.display(highImage, "High image after subtraction");
+        //DisplayUtilities.display(highImage, "High image after subtraction");
 
         // -- Making a hybrid image --
         MBFImage hybridImage = lowImage.add(highImage);

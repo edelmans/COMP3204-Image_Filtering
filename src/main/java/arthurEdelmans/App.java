@@ -27,8 +27,8 @@ public class App {
     public static void main( String[] args ) throws IOException {
     	//Create an image
         //public static MBFImage makeHybrid(MBFImage lowImage, float lowSigma, MBFImage highImage, float highSigma)
-        MBFImage highImage = ImageUtilities.readMBF(new File("images/data/cat.bmp"));
-        MBFImage lowImage = ImageUtilities.readMBF(new File("images/data/dog.bmp"));
+        MBFImage highImage = ImageUtilities.readMBF(new File("images/data/motorcycle.bmp"));
+        MBFImage lowImage = ImageUtilities.readMBF(new File("images/data/bicycle.bmp"));
         //Based off the lecture recordings
         int lowSigma = 7;
 
