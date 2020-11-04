@@ -54,7 +54,7 @@ public class MyHybridImages {
         // "Can be most easily achieved by subtracting a low-pass version of an image itself"
         highImage = highImage.subtract(highImage.process(myConv));
 
-        //save created images
+        //save created images - commented out because it's not part of the coursework specification
 //        File lowImgFile = new File("images/output/lowPassImage.jpg");
 //        try {
 //            ImageIO.write(ImageUtilities.createBufferedImageForDisplay(lowImage), "jpg", lowImgFile);
@@ -68,8 +68,6 @@ public class MyHybridImages {
 //        } catch (IOException e) {
 //            e.printStackTrace();
 //        }
-
-        //DisplayUtilities.display(highImage, "High image after subtraction");
 
         // -- Making a hybrid image --
         MBFImage hybridImage = lowImage.add(highImage);
