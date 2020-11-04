@@ -27,10 +27,10 @@ public class App {
     public static void main( String[] args ) throws IOException {
     	//Create an image
         //public static MBFImage makeHybrid(MBFImage lowImage, float lowSigma, MBFImage highImage, float highSigma)
-        MBFImage highImage = ImageUtilities.readMBF(new File("images/data/motorcycle.bmp"));
-        MBFImage lowImage = ImageUtilities.readMBF(new File("images/data/bicycle.bmp"));
+        MBFImage highImage = ImageUtilities.readMBF(new File("images/Turtles.jpg"));
+        MBFImage lowImage = ImageUtilities.readMBF(new File("images/Jaws.jpg"));
         //Based off the lecture recordings
-        int lowSigma = 7;
+        int lowSigma = 4;
 
         MBFImage newHybridImage = MyHybridImages.makeHybrid(lowImage, lowSigma, highImage, 0f);
 
